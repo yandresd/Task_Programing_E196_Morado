@@ -1,5 +1,5 @@
 Lider:
- - Jaider Stiven López Hernadez
+ - Yahir Duran Cristancho
 
 Colaboradores:
  - Christian Leonardo Hernández Estrada
