@@ -3,6 +3,6 @@ Lider:
 
 Colaboradores:
  - Christian Leonardo Hernández Estrada
- - Yahir Andrés Duran Cristancho
+ - Jaider Stiven López Hernández
 
 Equipo: Morado
