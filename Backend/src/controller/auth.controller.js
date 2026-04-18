@@ -21,8 +21,7 @@ const register = async (req, res) => {
         const newUser = new User({
             name,
             email,
-            password: hashedPassword,
-            role
+            password: hashedPassword
         });
 
         await newUser.save();
@@ -65,8 +64,7 @@ const login = async (req, res) => {
             user: {
                 id: user._id,
                 name: user.name,
-                email: user.email,
-                role: user.role
+                email: user.email
             }
         });
 
