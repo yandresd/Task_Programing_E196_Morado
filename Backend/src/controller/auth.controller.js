@@ -39,7 +39,7 @@ const login = async (req, res) => {
         const { email, password } = req.body;
 
         // Buscamos al usuario por su correo
-        const user = await findOne({ email });
+        const user = await User.findOne({ email });
         if (!user) {
             return res.status(400).json({ mensaje: 'Credenciales inválidas (correo)' });
         }
