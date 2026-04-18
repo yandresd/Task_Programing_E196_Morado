@@ -26,10 +26,10 @@ const register = async (req, res) => {
         });
 
         await newUser.save();
-        res.status(201).json({ mensaje: 'Usuario registrado exitosamente' });
+        res.status(201).json({ status: 'success', mensaje: 'Usuario registrado exitosamente' });
 
     } catch (error) {
-        res.status(500).json({ mensaje: 'Error al registrar usuario', error: error.message });
+        res.status(500).json({ status: 'error', mensaje: 'Error al registrar usuario', error: error.message });
     }
 };
 
@@ -59,6 +59,7 @@ const login = async (req, res) => {
 
         // Devolvemos el token y los datos básicos del usuario
         res.status(200).json({
+            status: 'success',
             mensaje: 'Inicio de sesión exitoso',
             token,
             user: {
@@ -70,7 +71,7 @@ const login = async (req, res) => {
         });
 
     } catch (error) {
-        res.status(500).json({ mensaje: 'Error al iniciar sesión', error: error.message });
+        res.status(500).json({ status: 'error', mensaje: 'Error al iniciar sesión', error: error.message });
     }
 };
 

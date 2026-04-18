@@ -1,7 +1,7 @@
 import { Router } from 'express';
-const router = Router();
 import { createTeam } from '../controller/team.controller.js';
 import verifyToken from '../middlewares/auth.middleware.js';
+const router = Router();
 
 router.post('/createTeam', verifyToken, createTeam);
 

@@ -17,10 +17,10 @@ const createTeam = async (req, res) => {
         });
 
         await newTeam.save();
-        res.status(201).json({ mensaje: 'Equipo creado exitosamente', team: newTeam });
+        res.status(201).json({ status: 'success', mensaje: 'Equipo creado exitosamente', team: newTeam });
 
     } catch (error) {
-        res.status(500).json({ mensaje: 'Error al crear el equipo', error: error.message });
+        res.status(500).json({ status: 'error', mensaje: 'Error al crear el equipo', error: error.message });
     }
 };
 
