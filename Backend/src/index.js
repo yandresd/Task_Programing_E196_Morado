@@ -5,6 +5,8 @@ import connectDB from './config/db.js';
 import authRoutes from './routes/auth.routes.js';
 import teamRoutes from './routes/team.routes.js';
 
+dotenv.config();
+
 const app = express();
 
 connectDB();
