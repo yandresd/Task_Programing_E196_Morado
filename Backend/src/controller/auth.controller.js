@@ -8,7 +8,7 @@ const register = async (req, res) => {
         const { name, email, password} = req.body;
 
         // Verificamos si el usuario ya existe
-        const userExists = await findOne({ email });
+        const userExists = await User.findOne({ email });
         if (userExists) {
             return res.status(400).json({ mensaje: 'El correo ya está registrado' });
         }
