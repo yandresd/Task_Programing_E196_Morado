@@ -1,0 +1,45 @@
+# ==========================================
+# REGLAS GENERALES (Aplica a ambos proyectos)
+# ==========================================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# ==========================================
+# REGLAS DEL BACKEND (Node.js)
+# ==========================================
+# ¡CRÍTICO! Nunca subir las variables de entorno
+Backend/.env
+Backend/.env.*
+*.env
+
+# Logs y bases de datos locales
+logs/
+*.log
+pids/
+*.pid
+
+# ==========================================
+# REGLAS DEL FRONTEND (Angular)
+# ==========================================
+# Carpetas de compilación (Lo que se genera al hacer build)
+Frontend/dist/
+Frontend/tmp/
+Frontend/out-tsc/
+Frontend/bazel-out/
+
+# Caché de Angular
+Frontend/.angular/
+
+# Pruebas y Reportes
+Frontend/coverage/
+
+# Archivos de entorno locales de Angular (Si los llegas a usar)
+Frontend/src/environments/environment.prod.ts.local.ts
+Frontend/src/environments/environment.local.ts
