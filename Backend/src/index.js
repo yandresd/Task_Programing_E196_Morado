@@ -4,6 +4,7 @@ import cors from 'cors';
 import connectDB from './config/db.js';
 import authRoutes from './routes/auth.routes.js';
 import teamRoutes from './routes/team.routes.js';
+import verifyToken from './middlewares/auth.middleware.js';
 
 dotenv.config();
 
@@ -20,6 +21,7 @@ app.get('/', (req, res) => {
 });
 
 app.use('/api/auth', authRoutes);
+app.use(verifyToken);
 app.use('/api/teams', teamRoutes);
 
 

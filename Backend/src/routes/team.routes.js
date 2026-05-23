@@ -1,8 +1,9 @@
 import { Router } from 'express';
-import { createTeam } from '../controller/team.controller.js';
+import { createTeam, searchTeams } from '../controller/team.controller.js';
 import verifyToken from '../middlewares/auth.middleware.js';
 const router = Router();
 
-router.post('/createTeam', verifyToken, createTeam);
+router.post('/createTeam', createTeam);
+router.post('/searchTeams', searchTeams);
 
 export default router;

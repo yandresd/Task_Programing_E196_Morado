@@ -2,19 +2,18 @@ import jwt from 'jsonwebtoken';
 
 const verifyToken = (req, res, next) => {
 
-    const authHeader = req.header('Authorization');
+    const authToken = req.header('accesstoken');
     
-    if (!authHeader) {
-        return res.status(401).json({ mensaje: 'Acceso denegado. No se proporcionó un token.' });
+    if (!authToken) {
+        return res.status(401).json({ mesage: 'Acceso denegado. No se proporcionó un token.' });
     }
 
     try {
-        const token = authHeader.split(' ')[1];
-        const verified = jwt.verify(token, process.env.JWT_SECRET);
+        const verified = jwt.verify(authToken, process.env.JWT_KEY);
         req.user = verified;
         next(); 
     } catch (error) {
-        res.status(400).json({ mensaje: 'El token no es válido o ha expirado' });
+        res.status(400).json({ status:"error", mesage: 'El token no es válido o ha expirado' });
     }
 };
 
